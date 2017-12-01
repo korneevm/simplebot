@@ -13,11 +13,11 @@ def img_has_cat(filename):
 			for item in items:
 				if item['name'] == 'cat':
 					return True
-				else:
-					return False
+			else:
+				return False
 		except (IndexError):
 			return False
-	except (client.ApiError):
+	except (client.ApiError, FileNotFoundError):
 		return False
 
 
