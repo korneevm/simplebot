@@ -83,7 +83,7 @@ def start_bot():
     dp.add_handler(CommandHandler("start", reply_to_start_command))
 
     conv_handler = ConversationHandler(
-        entry_points=[RegexHandler('^(Заполнить анекту)$', start_anketa, pass_user_data=True)],
+        entry_points=[RegexHandler('^(Заполнить анкету)$', start_anketa, pass_user_data=True)],
 
         states={
             "name": [MessageHandler(Filters.text, get_name, pass_user_data=True)],
