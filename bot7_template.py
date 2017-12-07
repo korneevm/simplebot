@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO, filename="bot.log", format='%(asctime)s 
 
 
 def reply_to_start_command(bot, update):
-    reply_keyboard = [['Прислать котика', 'Узнать погоду', 'Заполнить анекту']]
+    reply_keyboard = [['Прислать котика', 'Узнать погоду', 'Заполнить анкету']]
     update.message.reply_text(
         "Привет! Я бот, который поможет заполнить простую анекту.",
         reply_markup=ReplyKeyboardMarkup(reply_keyboard)

@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO, filename="bot.log", format='%(asctime)s 
 
 
 def reply_to_start_command(bot, update):
-    reply_keyboard = [['Прислать котика', 'Узнать погоду', 'Заполнить анекту']]
+    reply_keyboard = [['Прислать котика', 'Узнать погоду', 'Заполнить анкету']]
     update.message.reply_text(
         "Привет! Я бот, который поможет заполнить простую анекту.",
         reply_markup=ReplyKeyboardMarkup(reply_keyboard)
@@ -61,7 +61,7 @@ def comment(bot, update, user_data):
 
 
 def skip_comment(bot, update, user_data):
-    user_data["comment"] = "Пользовател не оставил комментария"
+    user_data["comment"] = "Пользователь не оставил комментария"
     reply_keyboard = [['Прислать котика', 'Узнать погоду']]
     update.message.reply_text("Спасибо!", reply_markup=ReplyKeyboardMarkup(reply_keyboard))
     return ConversationHandler.END
@@ -69,6 +69,10 @@ def skip_comment(bot, update, user_data):
 
 def dontknow(bot, update, user_data):
     update.message.reply_text("Не понимаю")
+
+
+def false_start(bot, update, user_data):
+    update.message.reply_text("Нельзя :)")
 
 
 def start_bot():
