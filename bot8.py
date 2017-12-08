@@ -26,7 +26,7 @@ def alarm_command(bot, update, args, job_queue):
 
 
 def alarm(bot, job):
-    bot.send_message(chat_id=job.context, text="Сработал будильник!")
+    bot.sendMessage(chat_id=job.context, text="Сработал будильник!")
 
 
 @messagequeue.queuedmessage
